@@ -14,7 +14,7 @@ open class MatrixChainMultiplication {
         sInt = Array(repeatElement(Array(repeating: 0, count: pInt.count), count: pInt.count))
     }
 
-    func result() -> Int {
+    open func result() -> Int {
         var mInt = Array(repeatElement(Array(repeating: 0, count: pInt.count), count: pInt.count))
 
         for l in 1..<pInt.count - 1 {
@@ -34,7 +34,11 @@ open class MatrixChainMultiplication {
         return mInt[1][pInt.count - 1]
     }
 
+    open func optimalParenthesis() -> String {
+        return optimalParenthesis(i: 1, j: pInt.count - 1)
+    }
 
-
-
+    private func optimalParenthesis(i: Int, j: Int) -> String {
+        return i != j ? "(" + (optimalParenthesis(i: i, j: sInt[i][j]) + (optimalParenthesis(i: sInt[i][j] + 1, j: j))) + (")") : "A" + String(i);
+    }
 }
