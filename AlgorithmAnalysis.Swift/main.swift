@@ -8,7 +8,7 @@
 
 import Foundation
 
-var sequence = [30, 35, 15, 5, 10, 20, 25]
+var mcm = MatrixChainMultiplication.init(sequence: [30, 35, 15, 5, 10, 20, 25])
 
-var mcm = MatrixChainMultiplication.init(sequence: sequence)
 print(mcm.result())
+print(mcm.optimalParenthesis())
