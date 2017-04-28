@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E9C095C5D1036FBDB65509FD /* MatrixChainMultiplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C092D3B99D41C804BD62DD /* MatrixChainMultiplication.swift */; };
+		E9C09553B78FC1124888CBEE /* MatrixChainMultiplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C090E56DE4DB714C54B265 /* MatrixChainMultiplication.swift */; };
 		E9C09DCF68C762C3D3A6E6A5 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C09227A70C6FDD3E86382D /* main.swift */; };
 /* End PBXBuildFile section */
 
@@ -24,9 +24,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E9C090E56DE4DB714C54B265 /* MatrixChainMultiplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatrixChainMultiplication.swift; sourceTree = "<group>"; };
 		E9C09227A70C6FDD3E86382D /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		E9C092D3B99D41C804BD62DD /* MatrixChainMultiplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatrixChainMultiplication.swift; sourceTree = "<group>"; };
 		E9C099CD5F92B5ADE64D4278 /* AlgorithmAnalysis.Swift */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AlgorithmAnalysis.Swift; sourceTree = BUILT_PRODUCTS_DIR; };
+		E9C09EC65D56C617E37158ED /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,19 +49,12 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E9C09BA7AECC13D40B6BA05A /* lab5 */ = {
-			isa = PBXGroup;
-			children = (
-				E9C092D3B99D41C804BD62DD /* MatrixChainMultiplication.swift */,
-			);
-			path = lab5;
-			sourceTree = "<group>";
-		};
 		E9C09C20A61E2498C9817D74 /* AlgorithmAnalysis.Swift */ = {
 			isa = PBXGroup;
 			children = (
 				E9C09227A70C6FDD3E86382D /* main.swift */,
-				E9C09BA7AECC13D40B6BA05A /* lab5 */,
+				E9C09EC65D56C617E37158ED /* README.md */,
+				E9C090E56DE4DB714C54B265 /* MatrixChainMultiplication.swift */,
 			);
 			path = AlgorithmAnalysis.Swift;
 			sourceTree = "<group>";
@@ -124,7 +118,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9C09DCF68C762C3D3A6E6A5 /* main.swift in Sources */,
-				E9C095C5D1036FBDB65509FD /* MatrixChainMultiplication.swift in Sources */,
+				E9C09553B78FC1124888CBEE /* MatrixChainMultiplication.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
