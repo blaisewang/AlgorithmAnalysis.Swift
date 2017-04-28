@@ -8,7 +8,6 @@
 
 import Foundation
 
-var mcm = MatrixChainMultiplication.init(sequence: [30, 35, 15, 5, 10, 20, 25])
-
-print(mcm.result())
-print(mcm.optimalParenthesis())
+let (cost, expr) = [30, 35, 15, 5, 10, 20, 25].optimalMatrixChaining
+print(cost)
+print(expr)
