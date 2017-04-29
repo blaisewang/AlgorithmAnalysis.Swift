@@ -25,27 +25,26 @@ extension String {
 
         var longestCommonSubsequence = ""
 
-        func lCS(row: Int, column: Int) {
-            guard row == 0 || column == 0 else {
-                if self[characters.index(startIndex, offsetBy: row - 1)] != s[s.characters.index(s.startIndex, offsetBy: column - 1)] || table[row][column] != table[row - 1][column - 1] + 1 {
-                    if self[characters.index(startIndex, offsetBy: row - 1)] != s[s.characters.index(s.startIndex, offsetBy: column - 1)] && table[row - 1][column] >= table[row][column - 1] {
-                        lCS(row: row - 1, column: column)
-                    } else {
-                        lCS(row: row, column: column - 1)
-                    }
-                } else {
-                    lCS(row: row - 1, column: column - 1)
-                    longestCommonSubsequence.append(self[characters.index(startIndex, offsetBy: row - 1)])
-                }
-
+        func lcs(row: Int, column: Int) {
+            guard row > 0 && column > 0 else {
                 return
+            }
+
+            if self[characters.index(startIndex, offsetBy: row - 1)] != s[s.characters.index(s.startIndex, offsetBy: column - 1)] || table[row][column] != table[row - 1][column - 1] + 1 {
+                if self[characters.index(startIndex, offsetBy: row - 1)] != s[s.characters.index(s.startIndex, offsetBy: column - 1)] && table[row - 1][column] >= table[row][column - 1] {
+                    lcs(row: row - 1, column: column)
+                } else {
+                    lcs(row: row, column: column - 1)
+                }
+            } else {
+                lcs(row: row - 1, column: column - 1)
+                longestCommonSubsequence.append(self[characters.index(startIndex, offsetBy: row - 1)])
             }
         }
 
-        lCS(row: characters.count, column: s.characters.count)
+        lcs(row: characters.count, column: s.characters.count)
         let distance = (characters.count > s.characters.count ? characters.count : s.characters.count) - longestCommonSubsequence.characters.count
 
         return (distance, longestCommonSubsequence)
     }
 }
-
