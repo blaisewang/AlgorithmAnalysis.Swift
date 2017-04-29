@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		E9C09553B78FC1124888CBEE /* MatrixChainMultiplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C090E56DE4DB714C54B265 /* MatrixChainMultiplication.swift */; };
 		E9C09DCF68C762C3D3A6E6A5 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C09227A70C6FDD3E86382D /* main.swift */; };
+		E9C09FFF6CF95104198F0339 /* LongestCommonSubsequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C09093D53F2716DF544F58 /* LongestCommonSubsequence.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,6 +25,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E9C09093D53F2716DF544F58 /* LongestCommonSubsequence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LongestCommonSubsequence.swift; sourceTree = "<group>"; };
 		E9C090E56DE4DB714C54B265 /* MatrixChainMultiplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatrixChainMultiplication.swift; sourceTree = "<group>"; };
 		E9C09227A70C6FDD3E86382D /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		E9C099CD5F92B5ADE64D4278 /* AlgorithmAnalysis.Swift */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AlgorithmAnalysis.Swift; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -55,6 +57,7 @@
 				E9C09227A70C6FDD3E86382D /* main.swift */,
 				E9C09EC65D56C617E37158ED /* README.md */,
 				E9C090E56DE4DB714C54B265 /* MatrixChainMultiplication.swift */,
+				E9C09093D53F2716DF544F58 /* LongestCommonSubsequence.swift */,
 			);
 			path = AlgorithmAnalysis.Swift;
 			sourceTree = "<group>";
@@ -119,6 +122,7 @@
 			files = (
 				E9C09DCF68C762C3D3A6E6A5 /* main.swift in Sources */,
 				E9C09553B78FC1124888CBEE /* MatrixChainMultiplication.swift in Sources */,
+				E9C09FFF6CF95104198F0339 /* LongestCommonSubsequence.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
