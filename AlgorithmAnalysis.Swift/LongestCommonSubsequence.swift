@@ -6,16 +6,16 @@
 import Foundation
 
 extension String {
-    public func makeLCSWith(_ s: String) -> (Int, String) {
-        var table = (0...self.characters.count).map { _ in
+    func longestCommonSubsequence(with s: String) -> (Int, String) {
+        var table = (0...characters.count).map { _ in
             (0...s.characters.count).map { _ in
                 0
             }
         }
 
-        for row in 1...self.characters.count {
+        for row in 1...characters.count {
             for column in 1...s.characters.count {
-                if (self[characters.index(startIndex, offsetBy: row - 1)] != s[s.characters.index(s.startIndex, offsetBy: column - 1)]) {
+                if self[characters.index(startIndex, offsetBy: row - 1)] != s[s.characters.index(s.startIndex, offsetBy: column - 1)] {
                     table[row][column] = table[row - 1][column] >= table[row][column - 1] ? table[row - 1][column] : table[row][column - 1]
                 } else {
                     table[row][column] = table[row - 1][column - 1] + 1
@@ -23,27 +23,29 @@ extension String {
             }
         }
 
-        var LCS = ""
-        func makeLCS(row: Int, column: Int) {
-            if (row == 0 || column == 0) {
-                return
-            }
+        var longestCommonSubsequence = ""
 
-            if (self[characters.index(startIndex, offsetBy: row - 1)] != s[s.characters.index(s.startIndex, offsetBy: column - 1)] || table[row][column] != table[row - 1][column - 1] + 1) {
-                if (self[characters.index(startIndex, offsetBy: row - 1)] != s[s.characters.index(s.startIndex, offsetBy: column - 1)] && table[row - 1][column] >= table[row][column - 1]) {
-                    makeLCS(row: row - 1, column: column);
+        func lCS(row: Int, column: Int) {
+            guard row == 0 || column == 0 else {
+                if self[characters.index(startIndex, offsetBy: row - 1)] != s[s.characters.index(s.startIndex, offsetBy: column - 1)] || table[row][column] != table[row - 1][column - 1] + 1 {
+                    if self[characters.index(startIndex, offsetBy: row - 1)] != s[s.characters.index(s.startIndex, offsetBy: column - 1)] && table[row - 1][column] >= table[row][column - 1] {
+                        lCS(row: row - 1, column: column)
+                    } else {
+                        lCS(row: row, column: column - 1)
+                    }
                 } else {
-                    makeLCS(row: row, column: column - 1);
+                    lCS(row: row - 1, column: column - 1)
+                    longestCommonSubsequence.append(self[characters.index(startIndex, offsetBy: row - 1)])
                 }
-            } else {
-                makeLCS(row: row - 1, column: column - 1);
-                LCS.append(self[characters.index(startIndex, offsetBy: row - 1)])
+
+                return
             }
         }
 
-        makeLCS(row: self.characters.count, column: s.characters.count)
-        let distance = (self.characters.count > s.characters.count ? self.characters.count : s.characters.count) - LCS.characters.count
+        lCS(row: characters.count, column: s.characters.count)
+        let distance = (characters.count > s.characters.count ? characters.count : s.characters.count) - longestCommonSubsequence.characters.count
 
-        return (distance, LCS)
+        return (distance, longestCommonSubsequence)
     }
 }
+

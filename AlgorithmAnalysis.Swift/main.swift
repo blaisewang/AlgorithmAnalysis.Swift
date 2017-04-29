@@ -12,6 +12,6 @@ let (cost, expr) = [30, 35, 15, 5, 10, 20, 25].optimalMatrixChaining
 print(cost)
 print(expr)
 
-let (distance, LCS) = "ABCBDAB".makeLCSWith("BDCABA")
+let (distance, LCS) = "ABCBDAB".longestCommonSubsequence(with: "BDCABA")
 print(distance)
 print(LCS)
