@@ -11,7 +11,12 @@ And get the most efficient way to multiply these matrices and the minimum number
 
 
 ## Longest Common Subsequence
-
 Get longest common subsequence from string A and B. 
 
 Calculate the distance between these two strings.
+
+
+## Activity Selection
+Given a sequence of activities `[(Int, Int)]`, the first integer means start time, and the second integer means finish time.
+
+And get the selection of non-conflicting activities.
