@@ -7,7 +7,10 @@ import Foundation
 
 extension Collection where Iterator.Element == (Int, Int), Index == Int, IndexDistance == Int {
     var activitySelection: [(Int, Int)] {
-        var s = [first!]
+        guard let first = first else {
+            return []
+        }
+        var s = [first]
         var j = 0
 
         for i in 2..<count {
