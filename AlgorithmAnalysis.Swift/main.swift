@@ -16,5 +16,5 @@ let (distance, LCS) = "ABCBDAB".longestCommonSubsequence(with: "BDCABA")
 print(distance)
 print(LCS)
 
-let selection = [(1, 4), (3, 5), (0, 6), (5, 7), (3, 8), (5, 9), (6, 10), (8, 11), (8, 12), (2, 13), (12, 14)].activitySelection
-print(selection)
+let data: [Activity] = [(1, 4), (3, 5), (0, 6), (5, 7), (3, 8), (5, 9), (6, 10), (8, 11), (8, 12), (2, 13), (12, 14)].activitySelection
+print(data.activitySelection)

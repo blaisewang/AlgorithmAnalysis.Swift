@@ -5,21 +5,19 @@
 
 import Foundation
 
-extension Collection where Iterator.Element == (Int, Int), Index == Int, IndexDistance == Int {
-    var activitySelection: [(Int, Int)] {
-        guard let first = first else {
+typealias Activity = (Int, Int)
+
+extension Collection where Iterator.Element == (Int, Int), SubSequence.Iterator.Element == Iterator.Element {
+    var activitySelection: [Activity] {
+        guard case (let s, var f)? = first else {
             return []
         }
-        var s = [first]
-        var j = 0
-
-        for i in 2..<count {
-            if self[i].0 >= self[j].1 {
-                s.append(self[i])
-                j = i
+        return [(s, f)] + dropFirst().filter { start, finish in
+            guard start >= f else {
+                return false
             }
+            f = finish
+            return true
         }
-
-        return s
     }
 }
