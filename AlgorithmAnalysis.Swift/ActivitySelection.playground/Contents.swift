@@ -1,9 +1,9 @@
+//: # Activity Selection
+
 //
 // Created by blaise wang on 2017/5/1.
 // Copyright (c) 2017 com.blaise.wang. All rights reserved.
 //
-
-import Foundation
 
 typealias Activity = (Int, Int)
 
@@ -21,3 +21,16 @@ extension Collection where Iterator.Element == (Int, Int), SubSequence.Iterator.
         }
     }
 }
+
+let data: [Activity] = [(1, 4),
+                        (3, 5),
+                        (0, 6),
+                        (5, 7),
+                        (3, 8),
+                        (5, 9),
+                        (6, 10),
+                        (8, 11),
+                        (8, 12),
+                        (2, 13),
+                        (12, 14)]
+data.activitySelection

@@ -1,16 +1,16 @@
+//:# MatrixChainMultiplication
+
 //
 // Created by blaise wang on 2017/4/27.
 // Copyright (c) 2017 com.blaise.wang. All rights reserved.
 //
 
-/// # Matrix Chain Multiplication
+/// Matrix Chain Multiplication
 ///
 /// Given an array p[] which represents the chain of matrices such that
 /// the ith matrix Mi is of dimension p[i-1] x p[i]. We need to write a
 /// function MatrixChainOrder() that should return the minimum number of
 /// multiplications needed to multiply the chain.
-
-import Foundation
 
 indirect enum Expression {
     case matrix(Int)
@@ -54,9 +54,13 @@ extension Collection where Iterator.Element == Int, Index == Int, IndexDistance 
         /// Construct operation
         func makeExpression(_ i: Int, _ j: Int) -> Expression {
             return i == j ? .matrix(i) : .multiply(makeExpression(i, temp[i][j]),
-                    makeExpression(temp[i][j] + 1, j))
+                                                   makeExpression(temp[i][j] + 1, j))
         }
         /// Return cost and expression
         return (cost[1][count - 1], makeExpression(1, count - 1))
     }
 }
+
+let (cost, expr) = [30, 35, 15, 5, 10, 20, 25].optimalMatrixChaining
+cost
+expr
