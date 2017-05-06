@@ -7,7 +7,7 @@
 
 typealias Activity = (Int, Int)
 
-extension Collection where Iterator.Element == (Int, Int), SubSequence.Iterator.Element == Iterator.Element {
+extension Collection where Iterator.Element == Activity, SubSequence.Iterator.Element == Iterator.Element {
     var activitySelection: [Activity] {
         guard case (let s, var f)? = first else {
             return []
