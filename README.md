@@ -20,3 +20,14 @@ Calculate the distance between these two strings.
 Given a sequence of activities `[(Int, Int)]`, the first integer means start time, and the second integer means finish time.
 
 And get the selection of non-conflicting activities.
+
+## Fractional Knapsack Problem
+
+The goal is to fill a knapsack with fractional amounts of different materials chosen to maximize the value of the selected materials.
+
+Given a sequence of item(s) `[(Int, Double)]`, the `Int` of the tuple means the weight of item, the `Double` means the value at this weight.
+
+Use `.knapsackFilled(withCapacity: Int)` function to get the sequence of item(s) which have maximun value.
+
+Use `.totalValue` to calculate the value of a sequence of item(s).
+
