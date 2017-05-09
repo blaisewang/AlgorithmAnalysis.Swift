@@ -31,3 +31,9 @@ Use `.knapsackFilled(withCapacity: Int)` function to get the sequence of item(s)
 
 Use `.totalValue` to calculate the value of a sequence of item(s).
 
+## Prim Algorithm
+
+The goal is to find a minimum spanning tree for a weighted undirected graph.
+
+
+
