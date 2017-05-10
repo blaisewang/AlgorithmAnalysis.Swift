@@ -31,9 +31,15 @@ Use `.knapsackFilled(withCapacity: Int)` function to get the sequence of item(s)
 
 Use `.totalValue` to calculate the value of a sequence of item(s).
 
-## Prim Algorithm
+## Prim's Algorithm
 
 The goal is to find a minimum spanning tree for a weighted undirected graph.
+
+Given a sequence of weighted edges `[((UInt, UInt), UInt)]`, the `(UInt, UInt)` means an undirected edge from the first `UInt` to the second `UInt` of the tuple. The third `UInt` means the weight of the edge.
+
+Use `.minimumSpanningTree` to get the Minimum Spanning Tree of a `[weightedEdge]`.
+
+Use `.totalWeight` to calculate the total weight of a weighted graph.
 
 
 
