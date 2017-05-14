@@ -15,6 +15,9 @@ extension Collection where Iterator.Element == weightedEdge, SubSequence.Iterato
             distanceDict.updateValue(UInt.max, forKey: $0.0.0)
             distanceDict.updateValue(UInt.max, forKey: $0.0.1)
         }
+        guard let _ = distanceDict[source] else {
+            return []
+        }
         distanceDict[source] = 0
         
         while distanceDict.count > 0 {
@@ -39,7 +42,7 @@ extension Collection where Iterator.Element == weightedEdge, SubSequence.Iterato
                 path.insert(node, at: 1)
                 node = previousNode
             }
-            shortestDistance.append(([], minDistance.value))
+            shortestDistance.append((path, minDistance.value))
             distanceDict.removeValue(forKey: minDistance.key)
         }
         
