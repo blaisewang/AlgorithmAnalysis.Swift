@@ -41,5 +41,11 @@ Use `.minimumSpanningTree` to get the Minimum Spanning Tree of a `[weightedEdge]
 
 Use `.totalWeight` to calculate the total weight of a weighted graph.
 
+## Dijkstra's algorithm
 
+To  finding the shortest paths between nodes in a graph.
+
+Given a sequence of weighted edges `[((Character, Character), UInt)]`, the `(Character, Character)` means an undirected edge from the first `Character` to the second `Character` of the tuple. The `UInt` means the weight of the edge.
+
+Use `.shortestPaths(sourcea: Character))` to get the shortest paths from source node to all nodes.
 
