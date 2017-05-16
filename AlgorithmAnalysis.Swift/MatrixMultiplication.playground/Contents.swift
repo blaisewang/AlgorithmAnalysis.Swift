@@ -19,7 +19,7 @@ extension Collection where Iterator.Element == weightedEdge, SubSequence.Iterato
         for i in 0..<m.count {
             for j in 0..<m.count {
                 for k in 0..<m.count {
-                    if (m[i][k] != Int.max && m[k][j] != Int.max) {
+                    if m[i][k] != Int.max && m[k][j] != Int.max {
                         if c[i][j] > m[i][k] + m[k][j] {
                             c[i][j] = m[i][k] + m[k][j]
                         }
@@ -27,6 +27,7 @@ extension Collection where Iterator.Element == weightedEdge, SubSequence.Iterato
                 }
             }
         }
+        
         return c
     }
     
