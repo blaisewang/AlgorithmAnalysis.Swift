@@ -9,19 +9,18 @@ typealias edge = (UInt, UInt)
 typealias weightedEdge = (edge, Int)
 
 extension Collection where Iterator.Element == weightedEdge, SubSequence.Iterator.Element == Iterator.Element {
-    func shortestPaths(sourceNode source: UInt) -> [([UInt], Int)] {
+    var allShortestPaths: String {
+        var description = ""
+        guard count > 0 else {
+            return description
+        }
         var vertexSet = Set<UInt>()
         var vertexes = [UInt]()
-        var shortestDistance = [([UInt], Int)]()
         forEach {
             vertexSet.insert($0.0.0)
             vertexSet.insert($0.0.1)
         }
         vertexes = vertexSet.sorted()
-        guard let sourceIndex = vertexes.index(of: source) else {
-            return []
-        }
-        
         var distance = (0..<vertexSet.count).map { row in
             (0..<vertexSet.count).map { column in
                 row == column ? 0 : Int.max
@@ -52,23 +51,30 @@ extension Collection where Iterator.Element == weightedEdge, SubSequence.Iterato
             }
         }
         
-        vertexes.forEach { v in
-            var u = source
-            var path = [UInt]()
-            if var row = vertexes.index(of: u), let column = vertexes.index(of: v) {
-                path.append(u)
-                if next[row][column] != -1 {
-                    while u != v {
-                        u = vertexes[next[row][column]]
-                        row = vertexes.index(of: u)!
-                        path.append(u)
-                    }
+        vertexes.forEach { u in
+            var shortestDistance = [([UInt], Int)]()
+            vertexes.forEach { v in
+                guard let rowIndex = vertexes.index(of: u) else {
+                    return
                 }
-                shortestDistance.append((path, distance[sourceIndex][column]))
+                var u = u
+                var path = [UInt]()
+                if var row = vertexes.index(of: u), let column = vertexes.index(of: v) {
+                    path.append(u)
+                    if next[row][column] != -1 {
+                        while u != v {
+                            u = vertexes[next[row][column]]
+                            row = vertexes.index(of: u)!
+                            path.append(u)
+                        }
+                    }
+                    shortestDistance.append((path, distance[rowIndex][column]))
+                }
             }
+            description += shortestDistance.description + "\n"
         }
         
-        return shortestDistance
+        return description
     }
 }
 
@@ -81,6 +87,6 @@ var graph: [weightedEdge] = [((1, 2), 3),
                              ((4, 1), 2),
                              ((4, 3), -5),
                              ((5, 4), 6)]
-print(graph.shortestPaths(sourceNode: 1))
+print(graph.allShortestPaths)
 
 
