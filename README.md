@@ -57,3 +57,11 @@ Given a sequence of weighted edges `[((UInt, UInt), UInt)]`, the `(UInt, UInt)` 
 
 Use `.allShortestPaths` to get the shortest paths of every pair of nodes and its distance.
 
+## Bellman–Ford Algorithm
+
+To compute shortest paths from a single source vertex to all of the other vertices in a weighted digraph.
+
+Given a sequence of weighted edges `[((Character, Character), Int)]`, the `(Character, Character)` means a directed edge from the first `Character` to the second `Character` of the tuple. The `Int` means the weight of the edge.
+
+Use `.shortestPaths(sourceNode: Character))` to get the result.
+
