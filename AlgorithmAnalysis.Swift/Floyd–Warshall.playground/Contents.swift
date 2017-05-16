@@ -1,7 +1,7 @@
 //:# Floyd–Warshall Algorithm
 
 ///
-/// To find shortest paths in a weighted graph with positive or negative edge weights 
+/// To find all pairs shortest paths in a weighted graph with positive or negative edge weights
 /// (but with no negative cycles)
 ///
 
@@ -9,7 +9,7 @@ typealias edge = (UInt, UInt)
 typealias weightedEdge = (edge, Int)
 
 extension Collection where Iterator.Element == weightedEdge, SubSequence.Iterator.Element == Iterator.Element {
-    var allShortestPaths: String {
+    var allPairsShortestPaths: String {
         var description = ""
         guard count > 0 else {
             return description
@@ -87,6 +87,6 @@ var graph: [weightedEdge] = [((1, 2), 3),
                              ((4, 1), 2),
                              ((4, 3), -5),
                              ((5, 4), 6)]
-print(graph.allShortestPaths)
+print(graph.allPairsShortestPaths)
 
 
