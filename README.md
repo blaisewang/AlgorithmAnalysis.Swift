@@ -41,6 +41,8 @@ Use `.minimumSpanningTree` to get the Minimum Spanning Tree of a `[weightedEdge]
 
 Use `.totalWeight` to calculate the total weight of a weighted graph.
 
+Use `.maxWeight` to get the max weight of a weighted graph.
+
 ## Dijkstra's algorithm
 
 To  finding the shortest paths between nodes in a graph.
@@ -51,11 +53,11 @@ Use `.shortestPaths(sourceNode: Character))` to get the shortest paths from sour
 
 ## Floyd–Warshall Algorithm
 
-To find shortest paths in a weighted graph with positive or negative edge weights (but with no negative cycles).
+To find all pairs shortest paths in a weighted graph with positive or negative edge weights (but with no negative cycles).
 
 Given a sequence of weighted edges `[((UInt, UInt), UInt)]`, the `(UInt, UInt)` means a directed edge from the first `UInt` to the second `UInt` of the tuple. The third `UInt` means the weight of the edge.
 
-Use `.allShortestPaths` to get the shortest paths of every pair of nodes and its distance.
+Use `.allPairsShortestPaths` to get the shortest paths of every pair of nodes and its distance.
 
 ## Bellman–Ford Algorithm
 
@@ -64,4 +66,12 @@ To compute shortest paths from a single source vertex to all of the other vertic
 Given a sequence of weighted edges `[((Character, Character), Int)]`, the `(Character, Character)` means a directed edge from the first `Character` to the second `Character` of the tuple. The `Int` means the weight of the edge.
 
 Use `.shortestPaths(sourceNode: Character))` to get the result.
+
+## APSP with Matrix Multiplication
+
+To find all pairs shortest paths in a weighted graph with positive or negative edge weights (but with no negative cycles).
+
+Given a sequence of weighted edges `[((UInt, UInt), UInt)]`, the `(UInt, UInt)` means a directed edge from the first `UInt` to the second `UInt` of the tuple. The third `UInt` means the weight of the edge.
+
+Use `.allPairsShortestPaths` to get the shortest paths of every pair of nodes and its distance.
 
